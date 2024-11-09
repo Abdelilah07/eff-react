@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function ExpertForm({ onAdd }) {
+function ExpertForm() {
 
     const [newEvent, setNewEvent] = useState({
         theme: "",
@@ -27,11 +27,11 @@ function ExpertForm({ onAdd }) {
     return (
         <>
             <form
-                className="shadow-md rounded-lg p-8 w-[30rem] mx-auto"
+                className="shadow-md rounded-lg p-8 w-[30rem] mx-auto mt-4"
                 onSubmit={handleSubmit}
             >
                 <h2 className="text-2xl font-bold text-center mb-4">Formulaire de l'evenement</h2>
-                <div className="space-y-6">
+                <div className="flex flex-col gap-4">
                     <div className="flex flex-col">
                         <label htmlFor="theme" className="text-xl">Theme</label>
                         <input type="text" name="theme" id="theme" value={newEvent.theme} onChange={handleChange} className="p-2 border-2 rounded-lg outline-none" />
@@ -53,7 +53,7 @@ function ExpertForm({ onAdd }) {
                         <input type="text" name="expert" id="expert" value={newEvent.expert} onChange={handleChange} className="p-2 border-2 rounded-lg outline-none" />
                     </div>
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-4">
                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Confirm</button>
                 </div>
             </form>
